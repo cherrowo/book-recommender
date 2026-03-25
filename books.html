@@ -66,12 +66,95 @@
     </div>
 
     <script>
+      // ── BOOK DATA ──────────────────────────────────────
+      //
+      //   difficulty: 1 = light, 2 = moderate, 3 = dense
+      //   length: 1 = short, 2 = medium, 3 = long, will replace with # of pages later
+      //   rating: out of 5
+      // mood tags are what the algorithm matches against, use lowercase
+
+      const books = [
+        {
+          title:      "The Master and Margarita",
+          author:     "Mikhail Bulgakov",
+          genre:      "Fantasy",
+          difficulty: 3,
+          length:     3,
+          mood:       ["mysterious", "dreamlike", "atmospheric"],
+          subjects:   ["identity", "commentary", "magic"],
+          rating:     3,
+          note:       "Read the Bible before reading this one"
+        },
+        {
+          title:      "Return to the Hundred Acre Wood",
+          author:     "David Benedictus",
+          genre:      "Children",
+          difficulty: 1,
+          length:     2,
+          mood:       ["warm", "intimate", "whimsical", "nostalgic"],
+          subjects:   ["friendships", "animals", "youth"],
+          rating:     4,
+          note:       "My favourite childhood book."
+        },
+        {
+          title:      "Normal People",
+          author:     "Sally Rooney",
+          genre:      "Literary fiction",
+          difficulty: 1,
+          length:     2,
+          mood:       ["emotional", "intimate", "quiet", "contemporary"],
+          subjects:   ["relationships", "class", "ireland", "youth"],
+          rating:     1,
+          note:       "This book sucked. If this shows up I am genuinely sorry."
+        },
+        {
+          title:      "Marabou Stork Nightmares",
+          author:     "Irvine Welsh",
+          genre:      "Literary fiction",
+          difficulty: 3,
+          length:     2,
+          mood:       ["dark", "unsettling", "violent", "contemporary", "unconventional"],
+          subjects:   ["relationships", "class", "scotland", "violence"],
+          rating:     5,
+          note:       "One of the best reads of this century, unsettling, witty, and has such a unique voice."
+        },
+        {
+          title:      "Perfume: the story of a murderer",
+          author:     "Patrick Suskind",
+          genre:      "Literary fiction",
+          difficulty: 2,
+          length:     2,
+          mood:       ["absurd", "exciting", "unconventional", "dark"],
+          subjects:   ["scent", "class", "france", "nature"],
+          rating:     5,
+          note:       "This book is a wild ride"
+        },
+        {
+          title:      "The Martian",
+          author:     "Andy Weir",
+          genre:      "Science fiction",
+          difficulty: 2,
+          length:     2,
+          mood:       ["adventurous", "witty", "hopeful", "exciting"],
+          subjects:   ["space", "science", "survival", "mars"],
+          rating:     3,
+          note:       "Great for book clubs"
+        }
+      ];
+
+      
+      console.log('Total books:', books.length);
+      console.log('First book title:', books[0].title);
+      console.log('First book mood tags:', books[0].mood);
+
+      // ── BUTTON ─────────────────────────────────────────────
 
       const startBtn = document.getElementById('start-btn');
 
       startBtn.addEventListener('click', function() {
-        alert('lmao you fell for it');
+        alert('loaded! ' + books.length + ' books ready.');
       });
+
     </script>
 
   </body>
