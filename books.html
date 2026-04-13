@@ -305,6 +305,21 @@
       }
     ];
 
+    const WEIGHTS = {
+      mood: 0.4,
+      difficulty: 0.2,
+      length: 0.1,
+      subject: 0.3
+    };
+
+    // -- Overlap Scoring Functions
+    function overlapScore(readerTags, bookTags) {
+      const overlap = readerTags.filter(tag => bookTags.includes(tag)).length;
+      return overlap / readerTags.length; // Normalize by reader's tag count
+    }
+    function distanceScore(readerValue, bookValue) {
+      return 1 - (Math.abs(readerValue - bookValue) / 2); // Normalize to [0,1]
+    }
     // ── STATE ────────────────────────────────────────────────
     //
     // currentQ: index for current Q #
